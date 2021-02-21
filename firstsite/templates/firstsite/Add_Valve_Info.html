@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Valve Addition Form</title>
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<style type="text/css">
+		.grid-con {
+			display: grid;
+			grid-template-columns: auto auto auto;
+		}
+		.grid-it {
+			margin: 5px;
+		}
+		.grid-it2 {
+			margin-top: 25px;
+		}
+		.grid-it3 {
+			margin-bottom: 10px;
+		}
+		.grid-it4 {
+			margin: 10px;
+		}
+		.flex-con {
+			display: flex;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.bord {
+			border: 1px solid #ddd;
+		}
+		.head-container1 {
+			width: 20%;
+			text-align: left;
+			margin-left: 15px;
+		}
+		.head-container2 {
+			width: 20%;
+			text-align: right;
+			margin-right: 15px;
+			padding-top: 10px;
+		}
+		.brand {
+			padding-top: 25px;
+			text-align: center;
+			width: 60%;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 20px;
+		}
+		.logo {
+			width: 50px;
+		}
+		h3 {
+			margin: 10px auto 10px 10px;
+		}
+	</style>
+</head>
+<body>
+        <div class="flex-con bord">
+                <div class="head-container1"><img class="logo"></div>
+		<div class="brand">EASY ENGINEERING!</div>
+		<div class="head-container2">Presented By:<br>SilverBack TECH</div>
+	</div>
+        <form action="Add_Actuator/" method="post">
+                {% csrf_token %}
+                <div class="grid-con bord grid-it3">
+                        <h3 style="grid-column: 1 / span 3;"><u>Add Value Information</u></h3>
+                        <div class="grid-it">
+                            Project Number:<br>
+                            <input type="text" name="Valve_Project_num" value="{{ form.Valve_Project_Num }}" readonly>
+                        </div>
+                        <div class="grid-it">
+                            Valve Tag:<br>
+                            {{ form.Valve_Tag1 }} 
+                        </div>
+                        <!--<div class="grid-it">
+                            Valve Type:<br>
+                            {{ form.Valve_Type }} 
+						</div>-->
+						<div class="grid-it">
+							<div>
+								Valve Type:
+							</div>
+							<select name="Valve_Type">
+								<option value="Ball">Ball</option>
+								<option value="Plug">Plug</option>
+							</select>
+						</div>
+                        <!--<div class="grid-it">
+                            Valve Class:<br>
+							{{ form.Valve_Class }} 
+						</div>-->
+						<div class="grid-it">
+							<div>
+								ANSI Rating:
+							</div>
+							<select name="Valve_Class">
+								<option value="ANSI 150">ANSI 150</option>
+								<option value="ANSI 300">ANSI 300</option>
+								<option value="ANSI 400">ANSI 400</option>
+								<option value="ANSI 600">ANSI 600</option>
+							</select>
+						</div>
+                        <div class="grid-it">
+                            Valve Size (in):<br>
+                            {{ form.Valve_Size1 }} 
+                        </div>      
+                        <div class="grid-it">
+                            Valve Manufacturer:<br>
+                            {{ form.Valve_Man1 }} 
+                        </div>
+                        <div class="grid-it">
+                            Valve Model:<br>
+                            {{ form.Valve_Model1}} 
+                        </div>
+                        <div class="grid-it">
+                            Valve Serial Number:<br>
+                            {{ form.Valve_Serial1}} 
+                        </div>
+                        <div class="grid-it">
+                            Max Pressure Across Valve:<br>
+                            {{ form.Valve_Max_Diff1}} 
+						</div>    
+						<div class="grid-it">
+                            Safety Factor:<br>
+                            {{ form.Valve_SafetyFactor}} 
+                        </div>      
+                </div>
+        <input type="submit" value="Submit">
+        </form>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Valve Addition Form</title>
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<style type="text/css">
+		.grid-con {
+			display: grid;
+			grid-template-columns: auto auto auto;
+		}
+		.grid-it {
+			margin: 5px;
+		}
+		.grid-it2 {
+			margin-top: 25px;
+		}
+		.grid-it3 {
+			margin-bottom: 10px;
+		}
+		.grid-it4 {
+			margin: 10px;
+		}
+		.flex-con {
+			display: flex;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.bord {
+			border: 1px solid #ddd;
+		}
+		.head-container1 {
+			width: 20%;
+			text-align: left;
+			margin-left: 15px;
+		}
+		.head-container2 {
+			width: 20%;
+			text-align: right;
+			margin-right: 15px;
+			padding-top: 10px;
+		}
+		.brand {
+			padding-top: 25px;
+			text-align: center;
+			width: 60%;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 20px;
+		}
+		.logo {
+			width: 50px;
+		}
+		h3 {
+			margin: 10px auto 10px 10px;
+		}
+	</style>
+</head>
+<body>
+        <div class="flex-con bord">
+                <div class="head-container1"><img class="logo"></div>
+		<div class="brand">EASY ENGINEERING!</div>
+		<div class="head-container2">Presented By:<br>SilverBack TECH</div>
+	</div>
+        <form action="Submit_Actuator/" method="post">
+                {% csrf_token %}
+                <div class="grid-con bord grid-it3">
+                        <h3 style="grid-column: 1 / span 3;"><u>Add Value Information</u></h3>
+                        <div class="grid-it">
+								The actuators below meets the torque requirements for your valve. Choose setpoint 1 and setpoint 2:<br><br>
+								Setpoint 1:<br>
+								<select style="width: 800px;" name="Valve_Setpoint_Pres1" id="setpoint_1">
+                                        {% for Act in Act.all %}
+                                        <option value="{{Act.pk}}">Actuator Model #: {{Act.Act_model_num}}, Act Pressure: {{Act.Act_pressure}}, Act Start Torque: {{Act.Act_OST}}, Act Mid Torque: {{Act.Act_OMT}}, Act End Torque: {{Act.Act_OET}}</option>
+                                        {% endfor %}
+								</select>
+								<br><br>
+								Setpoint 2:<br>
+								<select style="width: 800px;" name="Valve_Setpoint_Pres2" id="setpoint_2">
+                                        {% for Act in Act.all %}
+                                        <option value="{{Act.pk}}">Actuator Model #: {{Act.Act_model_num}}, Act Pressure: {{Act.Act_pressure}}, Act Start Torque: {{Act.Act_OST}}, Act Mid Torque: {{Act.Act_OMT}}, Act End Torque: {{Act.Act_OET}}</option>
+                                        {% endfor %}
+								</select>
+								<br><br>
+								<div><b>Torque Calculation Information:</b></div>
+								<div>Minimum Valve Torque: {{ V_Torque.Min_Torque }}</div>	
+								<div>Torque Exp Constant 1: {{ V_Torque.Torque_Cnst1 }}</div>
+								<div>Torque Exp Constant 2: {{ V_Torque.Torque_Cnst2 }}</div>
+								<div>Run Torque: Constant 1 + Pressure * Constant 2</div>
+								<div>Pressure = {{ Pressure }}</div>
+								<br>
+								<div><b>Valve Info and Torque Calculations:</b></div>
+								<div>Project Number Assoicated with Valve: <input type="text" name="Valve_Project_num" value="{{ Valve_Project_num }}" readonly></div>
+								<div>Valve Type: <input type="text" name="Valve_Type" value="{{ Valve_Type }}" readonly></div>
+								<div>Valve Tag: <input type="text" name="Valve_Tag1" value="{{ Valve_Tag1 }}" readonly></div>
+								<div>Valve Size (in): <input type="number" name="Valve_Size1" value="{{ Valve_Size1 }}" readonly></div>
+								<div>Valve Class: <input type="text" name="Valve_Class" value="{{ Valve_Class }}" readonly></div>
+								<div>Valve Manufacturer: <input type="text" name="Valve_Man1" value="{{ Valve_Man1 }}" readonly></div>
+								<div>Valve Model: <input type="text" name="Valve_Model1" value="{{ Valve_Model1 }}" readonly></div>
+								<div>Valve Serial #: <input type="text" name="Valve_Serial1" value="{{ Valve_Serial1 }}" readonly></div>
+								<div>Valve Max Differential Pressure (psig): <input type="number" name="Valve_Max_Diff1" value="{{ Valve_Max_Diff1 }}" readonly></div>
+								<div>Valve Safety Factor): <input type="number" name="Valve_SafetyFactor" value="{{ Valve_SafetyFactor }}" readonly></div>
+								<div>Valve Break Torque: <input type="number" name="Valve_Break_Torque" value="{{ Valve_Break }}" readonly></div>
+								<div>Valve Break Torque * Safety Factor: <input type="number" name="Valve_Break_Torque_SF" value="{{ Valve_Break_SF }}" readonly></div>
+								<div>MAST Torque: <input type="number" name="Valve_MAST" value="{{ V_Torque.MAST }}" readonly></div>
+								<div>Valve Run Torque: <input type="number" name="Valve_Run_Torque" value="{{ Valve_Run_Torque }}" readonly></div>
+								<div>Valve Run Torque * Safety Factor: <input type="number" name="Valve_Run_Torque_SF" value="{{ Valve_Run_Torque_SF }}" readonly></div>
+                        </div>                                      
+                </div>
+        <input type="submit" value="Submit">
+        </form>
+</body>
+</html>

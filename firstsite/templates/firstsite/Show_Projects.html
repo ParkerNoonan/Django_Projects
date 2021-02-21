@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Valve Addition Form</title>
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<style type="text/css">
+		.grid-con {
+			display: grid;
+			grid-template-columns: auto auto auto;
+		}
+		.grid-it {
+			margin: 5px;
+		}
+		.grid-it2 {
+			margin-top: 25px;
+		}
+		.grid-it3 {
+			margin-bottom: 10px;
+		}
+		.grid-it4 {
+			margin: 10px;
+		}
+		.flex-con {
+			display: flex;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.bord {
+			border: 1px solid #ddd;
+		}
+		.head-container1 {
+			width: 20%;
+			text-align: left;
+			margin-left: 15px;
+		}
+		.head-container2 {
+			width: 20%;
+			text-align: right;
+			margin-right: 15px;
+			padding-top: 10px;
+		}
+		.brand {
+			padding-top: 25px;
+			text-align: center;
+			width: 60%;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 20px;
+		}
+		.logo {
+			width: 50px;
+		}
+		h3 {
+			margin: 10px auto 10px 10px;
+		}
+	</style>
+</head>
+<body>
+        <div class="flex-con bord">
+                <div class="head-container1"><img class="logo"></div>
+		<div class="brand">EASY ENGINEERING!</div>
+		<div class="head-container2">Presented By:<br>SilverBack TECH</div>
+	</div>
+        <!--<form action="" method="post">-->
+               <!--< {% csrf_token %}-->
+                <div class="grid-con bord grid-it3">
+                        <h3 style="grid-column: 1 / span 3;"><u>All Active Projects For Review</u></h3>
+                        <div class="grid-it">	
+                                        {% for Project_to_Page in page_obj %}
+                                        <p><a href="{{Project_to_Page.EN_proj_num}}/">Site: {{Project_to_Page.EN_site_name}} for Project number: {{Project_to_Page.EN_proj_num}}</a></p>
+										{% endfor %}
+										
+						<div class="pagination">
+							<span class="step-links">
+								{% if page_obj.has_previous %}
+								<a href="?page=1">&laquo; first</a>
+								<a href="?page={{ page_obj.previous_page_number}}">previous</a>
+								{% endif %}
+								<span class="current">
+									Page {{ page_obj.number}} of {{page_obj.paginator.num_pages }}.
+								</span>
+								{% if page_obj.has_next %}
+								<a href="?page={{ page_obj.next_page_number}}">next</a>
+								<a href="?page={{ page_obj.paginator.num_pages }}">last&raquo;</a>
+								{% endif %}
+							</span>
+						</div>
+						</div>                                   
+                </div>
+        <!--<input type="submit" value="Submit">
+        </form>-->
+</body>
+</html>

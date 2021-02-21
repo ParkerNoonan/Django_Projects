@@ -1,0 +1,292 @@
+<html>
+<head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/firstsite/css/DesignBasis.css' %}">
+</head>
+<body>
+	<div class="page_1">
+		<div class="top_section">
+			<div id="xcel_image"><img src="{% static 'firstsite/images/ENimage.svg' %}" alt="EN logo"></div>
+			<div class="xcel_image5 DB">Design Basis - RCV Program</div>
+			<hr class="top_break">
+			<div class="xcel_image1"><span>{{ form.EN_site_name.value }}</span> - RCV Program</div>
+			<div class="xcel_image2">Xcel CNST COMM Work Order No. <span>{{ form.elec_WorkOrder_num.value }}</span></div>	
+			<div class="xcel_image2">Xcel CNST MECH Work Order No. <span>{{ form.mech_WorkOrder_num.value }}</span></div>
+			<div class="xcel_image2">ENE Project No. {{ form.EN_proj_num.value }}</div>
+			<div class="xcel_image4">Prepared by</div>
+			<div><img src="{% static 'firstsite/images/ENimage2.svg' %}" class="image2"></div>
+			<div class="xcel_image4 APPROVAL">APPROVALS</div>
+			<div>
+				<table class="table1 xcel_image5 table1_width">
+					<tr>
+						<th colspan="8" class="table1_bc">Required Approval</th>
+					</tr>
+					<tr>
+						<th>Rev</th>
+						<th class="table1_th"></th>
+						<th>Prepared By</th>
+						<th>Date</th>
+						<th>Reviewed By</th>
+						<th>Date</th>
+						<th>Approved By</th>
+						<th>Date</th>
+					</tr>
+					<tr>
+						<td>{{ form.revision_Num.value }}</td>
+						<td>{{ form.revision_Type.value }}</td>
+						<td>{{ form.prepared_By.value }}</td>
+						<td>{{ form.submittal_date.value }}</td>
+						<td>{{ form.reviewed_By.value }}</td>
+						<td>{{ form.submittal_date.value }}</td>
+						<td>{{ form.approved_By.value }}</td>
+						<td>{{ form.submittal_date.value }}</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+			<hr class="break_1 top_break">
+			<div class="xcel_image5 bottom_section">
+				<div>Document No. {{ form.EN_site_name.value }} - Design Basis {{ form.revision_Num.value }}</div>
+				<div>Project: <span>{{ form.EN_proj_num.value }}</span> - RCV Program</div>
+				<div class="page-break">ENE Project #: {{ form.EN_site_name.value }}</div>
+			</div>
+	</div>
+	<div class="page_2">
+		<div class="top_section">
+			<div id="xcel_image"><img src="{% static 'firstsite/images/ENimage.svg' %}" alt="EN logo"></div>
+			<div class="xcel_image5 DB">Design Basis - RCV Program</div>
+			<hr class="top_break">
+			<table class="table2 xcel_image5 table2_width">
+				<tr>
+					<td class="table2_tr_td1">1.</td>
+					<td class="table2_td2">LOCATION DETAILS</td>
+					<td class="table2_td3">3</td>
+				</tr>
+				<tr>
+					<td class="table2_td1">2.</td>
+					<td class="table2_td2">PROJECT SCOPE</td>
+					<td class="table2_td3">3</td>
+				</tr>
+				<tr>
+					<td class="table2_td1">3.</td>
+					<td class="table2_td2">DESIGN INPUTS</td>
+					<td class="table2_td3">3</td>
+				</tr>
+				<tr>
+					<td class="table2_td1">4.</td>
+					<td class="table2_td2">PROGRAMMING</td>
+					<td class="table2_td3">4</td>
+				</tr>
+				<tr>
+					<td class="table2_td1">5.</td>
+					<td class="table2_td2">ATTACHMENTS</td>
+					<td class="table2_td3">4</td>
+				</tr>
+				<tr>
+					<td class="table2_td11">5.1</td>
+					<td class="table2_td2" style="padding-left: 30px">Diagrams, Sketches, and Other Documents</td>
+					<td class="table2_td3">4</td>
+				</tr>
+				<tr>
+					<td class="table2_td11">5.2</td>
+					<td class="table2_td2" style="padding-left: 30px">Diagram of Proposed Work</td>
+					<td class="table2_td3">4</td>
+				</tr>
+				<tr>
+					<td class="table2_td11">5.3</td>
+					<td class="table2_td2" style="padding-left: 30px">Site Photos</td>
+					<td class="table2_td3">4</td>
+				</tr>
+			</table>
+		</div>
+			<hr class="break_2 top_break">
+			<div class="xcel_image5 bottom_section">
+				<div>Document No. {{ form.EN_site_name.value }} - Design Basis {{ form.revision_Num.value }}</div>
+				<div>Project: <span>{{ form.EN_proj_num.value }}</span> - RCV Program</div>
+				<div class="page-break">ENE Project #: {{ form.EN_site_name.value }}</div>
+			</div>
+	</div>
+	<div class="page_3">
+		<div class="top_section">
+			<div id="xcel_image"><img src="{% static 'firstsite/images/ENimage.svg' %}" alt="EN logo"></div>
+			<div class="xcel_image5 DB">Design Basis - RCV Program</div>
+			<hr class="top_break">
+			<div class="xcel_image6 page3_locationline">1 LOCATION</div>
+			<table class="table3">
+				<tr class="xcel_image4">
+					<th class="page3_item">Item</th>
+					<th class="page3_description">Description</th>
+				</tr>
+				<tr class="xcel_image5">
+					<td>Site Location</td>
+					<td>{{ form.Address.value }}, {{ form.City.value }},  {{ form.State.value }};</td>
+				</tr>
+				<tr class="xcel_image5">
+					<td></td>
+					<td>{{ form.Lattitude.value }} °N, {{ form.Longitude.value }} °W</td>
+				</tr>
+				<tr class="xcel_image5">
+					<td></td>
+					<td>{{ form.Section.value }}, {{ form.Township.value }}, {{ form.Range.value }}; {{ form.County.value }}</td>
+				</tr>
+			</table>
+			<div class="xcel_image6 page3_2line">2</div>
+			<div class="xcel_image6 page3_scopeline1">PROJECT SCOPE</div>
+			<div class="xcel_image5">The proposed project scope includes:
+			</div>
+			
+			<div class='xcel_image5' style='height: 160px; margin: 0 7.5%; padding-left: 0.5in'>
+				{{ form.Scope.value }}
+				<ul>
+					{% if form.ScopeBullet_1.value != "" and form.ScopeBullet_2.value != "" and form.ScopeBullet_3.value != "" and form.ScopeBullet_4.value != "" and form.ScopeBullet_5.value != ""%}
+					<li style='padding-top: 3px;'>{{ form.ScopeBullet_1.value }}</li>
+					<li style='padding-top: 3px;'>{{ form.ScopeBullet_2.value }}</li>
+					<li style='padding-top: 3px;'>{{ form.ScopeBullet_3.value }}</li>
+					<li style='padding-top: 3px;'>{{ form.ScopeBullet_4.value }}</li>
+					<li style='padding-top: 3px;'>{{ form.ScopeBullet_5.value }}</li>
+					{% endif %}
+					{% if form.ScopeBullet_1.value != "" and form.ScopeBullet_2.value != "" and form.ScopeBullet_3.value != "" and form.ScopeBullet_4.value != "" and form.ScopeBullet_5.value == ""%}
+					<li style='padding-top: 7px;'>{{ form.ScopeBullet_1.value }}</li>
+					<li style='padding-top: 7px;'>{{ form.ScopeBullet_2.value }}</li>
+					<li style='padding-top: 7px;'>{{ form.ScopeBullet_3.value }}</li>
+					<li style='padding-top: 7px;'>{{ form.ScopeBullet_4.value }}</li>
+					{% endif %}
+					{% if form.ScopeBullet_1.value != "" and form.ScopeBullet_2.value != "" and form.ScopeBullet_3.value != "" and form.ScopeBullet_4.value == "" and form.ScopeBullet_5.value == ""%}
+					<li style='padding-top: 12px;'>{{ form.ScopeBullet_1.value }}</li>
+					<li style='padding-top: 12px;'>{{ form.ScopeBullet_2.value }}</li>
+					<li style='padding-top: 12px;'>{{ form.ScopeBullet_3.value }}</li>
+					{% endif %}
+					{% if form.ScopeBullet_1.value != "" and form.ScopeBullet_2.value != "" and form.ScopeBullet_3.value == "" and form.ScopeBullet_4.value == "" and form.ScopeBullet_5.value == ""%}
+					<li style='padding-top: 15px;'>{{ form.ScopeBullet_1.value }}</li>
+					<li style='padding-top: 15px;'>{{ form.ScopeBullet_2.value }}</li>
+					{% endif %}
+					{% if form.ScopeBullet_1.value != "" and form.ScopeBullet_2.value == "" and form.ScopeBullet_3.value == "" and form.ScopeBullet_4.value == "" and form.ScopeBullet_5.value == ""%}
+					<li style='padding-top: 30px;'>{{ form.ScopeBullet_1.value }}</li>
+					{% endif %}
+				</ul>
+			</div>
+			<div class="xcel_image6 page3_3line">3</div>
+			<div class="xcel_image6 page3_designinputs">DESIGN INPUTS</div>
+				Here is where your valve table will go.
+			</div>
+			<hr class="top_break">
+			<div class="xcel_image5 bottom_section">
+				<div>Document No. {{ form.EN_site_name.value }} - Design Basis {{ form.revision_Num.value }}</div>
+				<div>Project: <span>{{ form.EN_proj_num.value }}</span> - RCV Program</div>
+				<div class="page-break">ENE Project #: {{ form.EN_site_name.value }}</div>
+			</div>
+	</div>
+	<div class="page_4">
+		<div class="top_section">
+			<div id="xcel_image"><img src="{% static 'firstsite/images/ENimage.svg' %}" alt="EN logo"></div>
+			<div class="xcel_image3 DB">Design Basis - RCV Program</div>
+			<hr class="top_break">
+			<div class="xcel_image6 page4_4line">4</div>
+			<div class="xcel_image6 page4_4Programming">PROGRAMMING</div>
+			<div class="xcel_image5 page4_Prog_Desc1">The program for (insert site name here) VS will be modified to include one (1) newly automated valves.  A copy of the standard RCV program will be used and updated with site-specific values.</div>
+			<div class="xcel_image5 page4_Prog_Desc2">Programming will begin upon completion of the IFC drawing package.</div>
+			<div class="xcel_image5 page4_Prog_Desc3">SCADA 210 LISTUS</div>
+			<div class="xcel_image5 page4_Prog_Desc4">(210 list to be updated here and sent to Xcel for review once programming has begun)</div>
+			<div class="xcel_image6 page4_5line">5</div>
+			<div class="xcel_image6 page4_5Attachments">ATTACHMENTS</div>
+			<div class="xcel_image6 page4_Pictureline">5.1 Diagrams, Sketches and other Documents</div>
+			<div class="xcel_image5 page4_511line">5.1.1 Diagrams of Proposed Work</div>
+			<div class="page5_IsoDwg">
+				insert photo here.
+			</div>
+		</div>
+		<hr class="top_break">
+		<div class="xcel_image5 bottom_section">
+			<div>Document No. {{ form.EN_site_name.value }} - Design Basis {{ form.revision_Num.value }}</div>
+			<div>Project: <span>{{ form.EN_proj_num.value }}</span> - RCV Program</div>
+			<div class="page-break">ENE Project #: {{ form.EN_site_name.value }}</div>
+		</div>
+	</div>
+	<div class="page_5">
+		<div class="top_section">
+			<div id="xcel_image"><img src="{% static 'firstsite/images/ENimage.svg' %}" alt="EN logo"></div>
+			<div class="xcel_image3 DB">Design Basis - RCV Program</div>
+			<hr class="top_break">
+			<div class="xcel_image5 page5_IsoDwgTitle">Isometric Drawing</div>
+			<div class="page5_IsoDwg">
+				insert image here.
+			</div>
+		</div>
+		<hr class="top_break">
+		<div class="xcel_image5 bottom_section">
+			<div>Document No. {{ form.EN_site_name.value }} - Design Basis {{ form.revision_Num.value }}</div>
+			<div>Project: <span>{{ form.EN_proj_num.value }}</span> - RCV Program</div>
+			<div class="page-break">ENE Project #: {{ form.EN_site_name.value }}</div>
+		</div>
+	<div class="page_5">
+		<div class="top_section">
+			<div id="xcel_image"><img src="{% static 'firstsite/images/ENimage.svg' %}" alt="EN logo"></div>
+			<div class="xcel_image3 DB">Design Basis - RCV Program</div>
+			<hr class="top_break">
+			<div class="xcel_image5 page5_IsoDwgTitle">Isometric Drawing</div>
+			<div class="page5_IsoDwg1">
+				insert image here
+			</div>
+			<div class="page5_IsoDwg2">
+				insert image here
+			</div>
+		</div>
+		<hr class="top_break">
+		<div class="xcel_image5 bottom_section">
+			<div>Document No. {{ form.EN_site_name.value }} - Design Basis {{ form.revision_Num.value }}</div>
+			<div>Project: <span>{{ form.EN_proj_num.value }}</span> - RCV Program</div>
+			<div class="page-break">ENE Project #: {{ form.EN_site_name.value }}</div>
+		</div>
+	</div>
+</body>
+</html>

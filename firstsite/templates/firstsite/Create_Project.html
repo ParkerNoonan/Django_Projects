@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Design Basis Form</title>
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<style type="text/css">
+		.grid-con {
+			display: grid;
+			grid-template-columns: auto auto auto;
+		}
+		.grid-it {
+			margin: 5px;
+		}
+		.grid-it2 {
+			margin-top: 25px;
+		}
+		.grid-it3 {
+			margin-bottom: 10px;
+		}
+		.grid-it4 {
+			margin: 10px;
+		}
+		.flex-con {
+			display: flex;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.bord {
+			border: 1px solid #ddd;
+		}
+		.head-container1 {
+			width: 20%;
+			text-align: left;
+			margin-left: 15px;
+		}
+		.head-container2 {
+			width: 20%;
+			text-align: right;
+			margin-right: 15px;
+			padding-top: 10px;
+		}
+		.brand {
+			padding-top: 25px;
+			text-align: center;
+			width: 60%;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 20px;
+		}
+		.logo {
+			width: 50px;
+		}
+		h3 {
+			margin: 10px auto 10px 10px;
+		}
+	</style>
+</head>
+<body>
+        <div class="flex-con bord">
+                <div class="head-container1"><img class="logo"></div>
+		<div class="brand">EASY ENGINEERING!</div>
+		<div class="head-container2">Presented By:<br>SilverBack TECH</div>
+	</div>
+        <form action="Review_Project/" method="post">
+                {% csrf_token %}
+                <div class="grid-con bord grid-it3">
+                        <h3 style="grid-column: 1 / span 3;"><u>Workorder & Eng. Company Information</u></h3>
+                        
+                        <div class="grid-it">
+                                EN Site Name: <br>
+                                <input type="text" name="EN_site_name">
+                        </div>
+                        <div class="grid-it">
+                                EN Project Number: <br>
+                                <input type="text" name="EN_proj_num" maxlength="10">
+                        </div>
+                        <div class="grid-it">
+                                Mechanical Work Order Number: <br>
+                                <input type="text" name="mech_WorkOrder_num" maxlength="9">
+                        </div>
+                        <div class="grid-it">
+                                Communication Work Order Number: <br>
+                                <input type="text" name="elec_WorkOrder_num" maxlength="9">
+                        </div>
+                        <div class="grid-it">
+                                Revision: <br>
+                                <select name="revision_Type">
+                                <option value="IFR">Issued For Review</option>
+                                <option value="IFB">Issued For Bid</option>
+                                <option value="Pre-IFC">Pre-IFC</option>
+                                <option value="IFC">Issued For Construction (IFC)</option>
+                                </select>
+                        </div>
+                        <div class="grid-it">
+                                Revision: <br>
+                                <select name="revision_Num">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                </select>
+                        </div>
+                        <div class="grid-it">
+                                Prepared By: <br>
+                                <input type="text" name="prepared_By" maxlength="3">
+                        </div>
+                        <div class="grid-it">
+                                Reviewed By: <br>
+                                <input type="text" name="reviewed_By" maxlength="3">
+                        </div>
+                        <div class="grid-it">
+                                Approved By: <br>
+                                <input type="text" name="approved_By" maxlength="3">
+                        </div>
+                        <div class="grid-it">
+                                Submittal Date: <br>
+                                <input type="date" name="submittal_date">
+                        </div>
+                </div>
+
+                <div class="grid-con bord grid-it3">
+                        <h3 style="grid-column: 1 / span 3;"><u>Site Location Information</u></h3>
+                        <div class="grid-it">
+                                Street Address: <br>
+                                <input type="text" name="Address">
+                        </div>
+                        <!--<div class="grid-it">
+                                City: <br>
+                                <input type="text" name="City">
+                        </div>-->
+                        <div class="grid-it">
+                                City & County: <br>
+                                <select name="City">
+                                        {% for city_County in city_County.all %}
+                                        <option value="{{city_County.pk}}">{{city_County.City}}, located in {{city_County.County}}</option>
+                                        {% endfor %}
+                                </select>
+                        </div>
+                        <div class="grid-it">
+                                State: <br>
+                                <input type="text" name="State">
+                        </div>
+                        <!--
+                        <div class="grid-it">
+                                County: <br>
+                                <input type="text" name="County">
+                        </div>
+                        -->
+                        <div class="grid-it">
+                                Section: <br>
+                                <input type="text" name="Section">
+                        </div>
+                        <div class="grid-it">
+                                Township: <br>
+                                <input type="text" name="Township">
+                        </div>
+                        <div class="grid-it">
+                                Range: <br>
+                                <input type="text" name="Range">
+                        </div>
+                        
+                                <div class="grid-it">
+                                Division: <br>
+                                <input type="text" name="Division">
+                        </div>
+                        <div class="grid-it">
+                                Latitude & Longitude: <br>
+                                <input type="text" name="Lattitude">
+                                <input type="text" name="Longitude">
+                        </div>
+                </div>
+                <div class="grid-con bord grid-it3">
+                        <h3 style="grid-column: 1 / span 3;"><u>Scope Information</u></h3>
+                       <div class="grid-it">
+                                Scope: <br>
+                                <textarea rows="4" cols="50" name="Scope" maxlength="300"></textarea>
+                        </div>
+                        
+                        <div class="grid-it">
+                                Scope Bullet 1: <br>
+                                <textarea rows="4" cols="50" name="ScopeBullet_1" maxlength="300"></textarea>
+                        </div>
+                        
+                        <div class="grid-it">
+                                Scope Bullet 2: <br>
+                                <textarea rows="4" cols="50" name="ScopeBullet_2" maxlength="300"></textarea>
+                        </div>
+                        <div class="grid-it">
+                                Scope Bullet 3: <br>
+                                <textarea rows="4" cols="50" name="ScopeBullet_3" maxlength="300"></textarea>
+                        </div>
+                        <div class="grid-it">
+                                Scope Bullet 4: <br>
+                                <textarea rows="4" cols="50" name="ScopeBullet_4" maxlength="300"></textarea>
+                        </div>
+                        <div class="grid-it">
+                                Scope Bullet 5: <br>
+                                <textarea rows="4" cols="50" name="ScopeBullet_5" maxlength="300"></textarea>
+                        </div>
+                </div>
+                
+        <input type="submit" value="Submit">
+        </form>
+</body>
+</html>
